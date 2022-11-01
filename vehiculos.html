@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAROY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .lila {
+            background-color: rebeccapurple
+        }
+
+        .lila-claro {
+            background-color: rgb(171, 89, 253)
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MODAL DE REGISTRO -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form class="modal-content" id="formRegistro">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registro de vehiculos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Marca</label>
+                            <div class="col-sm-10">
+                                <!-- <input type="email" class="form-control" id="inputEmail3"> -->
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                    name="marca">
+                                    <option selected>haga click para desplegar</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Changan">Changan</option>
+                                    <option value="Subaru">Subaru</option>
+                                    <option value="Mitsubishi">Mitsubishi</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="tipo" class="col-sm-2 col-form-label">Tipo</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="tipo">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="modelo" class="col-sm-2 col-form-label">Modelo</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="modelo">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="precio" class="col-sm-4 col-form-label">Precio de venta:</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" name="precio">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Suba la imagen de su auto</label>
+                            <input class="form-control" id="seleccionArchivos" type="file" name="imagen">
+                        </div>
+
+                        <!-- nuevo -->
+                        <img id="imagenPrevisualizacion">
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"> 
+                    <img src="https://pps.whatsapp.net/v/t61.24694-24/310647659_630961448482361_3745426224707927912_n.jpg?ccb=11-4&oh=01_AdQOoflmlcFnj59TcWC5R1Jv1BIQ7ltKTPTIZGbi3NEvPQ&oe=63656B96" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    LOCOS POR LOS AUTOS BOLIVIA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">vehiculos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Registro</a>
+                        </li>
+
+
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- otra seccion -->
+    <div class="container  lila-claro">
+        <h1>Vehiculos</h1>
+
+        <!-- MODAL DE REGISTRO -->
+
+        <button type="button" class="btn btn-info mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Registrar auto
+        </button>
+
+
+        <div class="container bg-primary">
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4" id="listaCarros">
+                <div class="col">
+
+                    <div class="card text-center">
+                        <img src="https://cdn-dyn.autopia.com.bo/frontend/z05nchhqqmrwcvvheffuzujzm0pmdz09/KEYS_34675_1664887160866_L.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">TOYOTA RAV4 </h5>
+                            <p class="card-text">
+                                <span class="badge rounded-pill bg-info text-dark"> Precio: $22000 </span>
+                                <span class="badge rounded-pill bg-secondary">Modelo: 2022</span>
+                                <span class="badge bg-success">Tipo: Vagoneta</span>
+                            </p>
+                            <a href="#" class="btn btn-primary">Comparar</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card ">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<script src="index.js"></script>
+
+<script>
+    /*
+    
+        const $seleccionArchivos = document.querySelector("#seleccionArchivos"),
+            $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
+    
+        // Escuchar cuando cambie
+        $seleccionArchivos.addEventListener("change", () => {
+            // Los archivos seleccionados, pueden ser muchos o uno
+            const archivos = $seleccionArchivos.files;
+            // Si no hay archivos salimos de la función y quitamos la imagen
+            if (!archivos || !archivos.length) {
+                $imagenPrevisualizacion.src = "";
+                return;
+            }
+            // Ahora tomamos el primer archivo, el cual vamos a previsualizar
+            const primerArchivo = archivos[0];
+            // Lo convertimos a un objeto de tipo objectURL
+            const objectURL = URL.createObjectURL(primerArchivo);
+            // Y a la fuente de la imagen le ponemos el objectURL
+            $imagenPrevisualizacion.src = objectURL;
+    
+            console.log(objectURL);
+            // ----------------------------------------------------------------
+            // console.log(blobGlobal);
+            // -----------
+            const form = document.getElementById('formRegistro')
+            //ponemos el formulario a la escucha #2
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                //creamos el objeto para almacenar los datos
+                // -----------
+    
+                // Obtener referencia al input y a la imagen
+                const data = {
+                    registroMarca: e.target.marca.value,
+                    registroTipo: e.target.tipo.value,
+                    registroModelo: e.target.modelo.value,
+                    registroPrecio: e.target.precio.value,
+                    registroImagen: objectURL
+                    // registroImagen: e.target.imagen.value
+                    // registroImagen: e.target.imagen.files[0].name
+                    // .files[0].name;
+                    // para la image
+    
+                }
+                // console.log(data)
+                // var data = e.target.marca.value
+                console.log(data)
+                // addData(data)//#3 ejecutamos la funcion
+            })
+        });
+    
+    */
+</script>
